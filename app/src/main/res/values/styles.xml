@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="LargeTextViewStyle" parent="Widget.AppCompat.TextView">
+        <!-- Customize attributes here -->
+        <item name="android:textColor">@color/black</item> <!-- Text color (example: red) -->
+        <item name="android:textSize">16sp</item> <!-- Text size (example: 16sp) -->
+
+        <!-- Add more custom attributes as needed -->
+    </style>
+
+    <style name="MediumTextViewStyle" parent="Widget.AppCompat.TextView">
+        <!-- Customize attributes here -->
+        <item name="android:textColor">@color/black</item> <!-- Text color (example: red) -->
+        <item name="android:textSize">14sp</item> <!-- Text size (example: 16sp) -->
+
+        <!-- Add more custom attributes as needed -->
+    </style>
+
+    <style name="SmallTextViewStyle" parent="Widget.AppCompat.TextView">
+        <!-- Customize attributes here -->
+        <item name="android:textColor">@color/black</item> <!-- Text color (example: red) -->
+        <item name="android:textSize">12sp</item> <!-- Text size (example: 16sp) -->
+
+        <!-- Add more custom attributes as needed -->
+    </style>
+
+</resources>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    tools:context=".fragment.RegisterFragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:srcCompat="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_20"/>
+
+    <LinearLayout
+        android:layout_below="@id/iv_logo"
+        android:layout_margin="@dimen/margin_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_50"
+            android:drawableStart="@drawable/person_24"
+            android:drawableTint="@color/gray_600"
+            android:drawablePadding="@dimen/padding_5"
+            android:inputType="textCapCharacters"
+            android:background="@drawable/edit_bg"
+            android:hint="Username"/>
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_50"
+            android:drawableStart="@drawable/email_24"
+            android:drawableTint="@color/gray_600"
+            android:drawablePadding="@dimen/padding_5"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/edit_bg"
+            android:hint="@string/email"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_50"
+            android:drawableLeft="@drawable/phone_android_24"
+            android:drawableTint="@color/gray_600"
+            android:drawablePadding="@dimen/padding_5"
+            android:background="@drawable/edit_bg"
+            android:inputType="number"
+            android:hint="Phone"/>
+
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_50"
+            android:drawableLeft="@drawable/lock_24"
+            android:drawableTint="@color/gray_600"
+            android:drawablePadding="@dimen/padding_5"
+            android:background="@drawable/edit_bg"
+            android:inputType="textPassword"
+            android:hint="@string/password"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_50"
+            android:drawableLeft="@drawable/lock_24"
+            android:drawableTint="@color/gray_600"
+            android:drawablePadding="@dimen/padding_5"
+            android:background="@drawable/edit_bg"
+            android:inputType="textPassword"
+            android:hint="@string/confirm_password"/>
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_45"
+            android:background="@drawable/edit_bg">
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_45" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_45"
+            android:layout_marginHorizontal="@dimen/height_45"
+            android:text="@string/register"
+            />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="@dimen/margin_10"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MediumTextViewStyle"
+                android:text="Are you have account ?"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MediumTextViewStyle"
+                android:textColor="@color/Rose_500"
+                android:paddingLeft="@dimen/padding_5"
+                android:textStyle="bold"
+                android:text="Login"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </LinearLayout>
+
+</RelativeLayout>

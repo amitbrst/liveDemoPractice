@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Rose_200">#fecdd3</color>
+    <color name="Rose_500">#f43f5e</color>
+    <color name="Rose_700">#be123c</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray_200">#e5e7eb</color>
+    <color name="gray_300">#d1d5db</color>
+    <color name="gray_600">#4b5563</color>
+    <color name="bg_color">#f4f4f5</color>
+</resources>
