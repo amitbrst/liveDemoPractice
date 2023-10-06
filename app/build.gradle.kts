@@ -20,13 +20,23 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField ("String", "MIDTRANS_API", "\"https://app.sandbox.midtrans.com/snap/v1\"")
+        }
+
         release {
+            buildConfigField ("String", "MIDTRANS_API", "\"https://app.sandbox.midtrans.com/snap/v1\"")
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+
+            buildConfigField("boolean", "DEBUG", "false")
+
         }
     }
+
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -49,5 +59,20 @@ dependencies {
     // Kotlin
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.4")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.4")
+
+    val lifecycle_version = "2.6.2"
+    // - - ViewModel
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    // - - LiveData
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+
+    // - - Retrofit2
+    val retrofit_version = "2.9.0"
+    val logging_version = "4.3.1"
+    implementation ("com.squareup.retrofit2:retrofit:$retrofit_version")
+    implementation ("com.squareup.retrofit2:converter-gson:$retrofit_version")
+    //noinspection GradleDependency
+    implementation ("com.squareup.okhttp3:okhttp:$logging_version")
+    implementation ("com.squareup.okhttp3:logging-interceptor:$logging_version")
 
 }
