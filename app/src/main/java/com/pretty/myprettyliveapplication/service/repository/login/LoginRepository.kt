@@ -28,7 +28,7 @@ object LoginRepository {
                     loginResponse.postValue(data)
                 } else {
                     // Handle the case where the response is not successful (e.g., non-200 status code)
-                    val errorMessage = "Response not successful: ${response.code()}"
+                    val errorMessage = "Somethings went wrong : ${response.code()}"
                     loginResponse.postValue(LoginResponse(errorMessage,""))
                 }
 

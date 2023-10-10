@@ -1,5 +1,7 @@
 package com.pretty.myprettyliveapplication.service.viewmodel
 
+import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,6 +13,7 @@ class LoginViewModel : ViewModel() {
     private var loginLiveData: MutableLiveData<LoginResponse?>? = null
 
     fun login(loginRequest: LoginRequest) : MutableLiveData<LoginResponse?>? {
+        Log.i("kjsdjkdss", "login: sdxcsdsdscdc")
         loginLiveData = LoginRepository.getLoginApiCall(loginRequest)
         return loginLiveData
     }

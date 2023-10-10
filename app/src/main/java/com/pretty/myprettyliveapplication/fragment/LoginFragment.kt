@@ -1,6 +1,5 @@
 package com.pretty.myprettyliveapplication.fragment
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,15 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import com.google.gson.Gson
 import com.pretty.myprettyliveapplication.R
 import com.pretty.myprettyliveapplication.databinding.FragmentLoginBinding
 import com.pretty.myprettyliveapplication.service.model.LoginRequest
 import com.pretty.myprettyliveapplication.service.viewmodel.LoginViewModel
-import com.pretty.myprettyliveapplication.utils.ShowCustomToast
 
 
 class LoginFragment : Fragment() {
@@ -37,20 +36,26 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
+
+    private fun <T> LiveData<T>.observeOnce(observer1: FragmentActivity, observer: Observer<T>) {
+        observeForever(object : Observer<T> {
+            override fun onChanged(t: T) {
+                observer.onChanged(t)
+                removeObserver(this)
+            }
+        })
+    }
     private fun init () {
-        binding.btnCreateAccount.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             val loginRequest = LoginRequest(email = "ak05836@gmail.com", password = "12345678")
-
-// Convert the LoginRequest object to JSON using a library like Gson
-//            val gson = Gson()
-//            val json = gson.toJson(loginRequest)
-            loginViewModel.login(loginRequest)!!.observe(requireActivity(), Observer {
-
-                Log.i("amit", "response data :"+it)
-                Toast.makeText(requireActivity(), "data :"+it?.message, Toast.LENGTH_SHORT).show()
-
+            loginViewModel.login(loginRequest)!!.observeOnce(requireActivity(), Observer {
+                if (it != null) {
+                    Toast.makeText(requireActivity(), "data: ${it.message}", Toast.LENGTH_SHORT).show()
+                }
             })
-//            Navigation.findNavController(binding.root).navigate(R.id.action_loginFragment_to_registerFragment)
+        }
+        binding.btnCreateAccount.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.action_loginFragment_to_registerFragment)
         }
     }
 
